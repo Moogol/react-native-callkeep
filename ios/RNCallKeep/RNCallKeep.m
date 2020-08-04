@@ -523,18 +523,18 @@ RCT_EXPORT_METHOD(isCallActive:(NSString *)uuidString)
     NSLog(@"[RNCallKeep][configureAudioSession] Activating audio session");
 #endif
 
-    // AVAudioSession* audioSession = [AVAudioSession sharedInstance];
-    // [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionAllowBluetooth error:nil];
+    AVAudioSession* audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionAllowBluetooth error:nil];
 
-    // [audioSession setMode:AVAudioSessionModeVoiceChat error:nil];
-    /*
+    [audioSession setMode:AVAudioSessionModeVoiceChat error:nil];
+    
     double sampleRate = 44100.0;
     [audioSession setPreferredSampleRate:sampleRate error:nil];
 
     NSTimeInterval bufferDuration = .005;
     [audioSession setPreferredIOBufferDuration:bufferDuration error:nil];
-     */
-    // [audioSession setActive:TRUE error:nil];
+    
+    [audioSession setActive:TRUE error:nil];
 }
 
 + (BOOL)application:(UIApplication *)application
