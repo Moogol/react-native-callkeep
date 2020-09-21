@@ -728,7 +728,6 @@ RCT_EXPORT_METHOD(reportUpdatedCall:(NSString *)uuidString contactIdentifier:(NS
     };
     [[NSNotificationCenter defaultCenter] postNotificationName:AVAudioSessionInterruptionNotification object:nil userInfo:userInfo];
 
-    [self configureAudioSession];
     [self sendEventWithNameWrapper:RNCallKeepDidActivateAudioSession body:nil];
 }
 
